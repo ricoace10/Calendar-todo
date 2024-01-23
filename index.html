@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Our Calendar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas class="weather"></canvas>
+    <header data-cy="welcome-segment">
+      <h1 id="todaysMonthDate"><!-- JS --></h1>
+      <div class="flex">
+        <h2 id="todaysDay"><!-- JS--></h2>
+        <span id="clock"></span>
+      </div>
+    </header>
+    <nav>
+      <div class="flex">
+        <ul class="navbar">
+          <li class="nav-item">Today</li>
+          <li class="nav-item">This week</li>
+          <li class="nav-item">This month</li>
+        </ul>
+        <!-- Ska visa din plats väder Här -->
+        <p class="location-weather">Loading weather...</p>
+      </div>
+    </nav>
+
+    <main>
+      <aside>
+        <div class="calendar disable-selection" id="calendar">
+          <div class="left-side">
+            <div class="current-day text-center">
+              <h1 class="calendar-left-side-day"></h1>
+              <div class="calendar-left-side-day-of-week"></div>
+            </div>
+
+            <div class="current-day-events">
+              <div class="event-title">Planned events:</div>
+              <ul class="current-day-events-list" data-cy="todo-list">
+                <li>
+                  <i
+                    class="fa-solid fa-pencil cursor-pointer edit-event"
+                    style="display: none"
+                  ></i>
+                  <i
+                    class="fa-solid fa-xmark cursor-pointer delete-event"
+                    style="display: none"
+                  ></i>
+                </li>
+              </ul>
+            </div>
+            <span class="event-count"></span>
+            <div class="add-date">
+              <input
+                type="date"
+                data-cy="todo-date-input"
+                id="todo-date-input"
+                class="todo-date-input"
+              />
+            </div>
+            <div class="add-event-day">
+              <input
+                type="text"
+                id="add-event-day-field"
+                class="add-event-day-field"
+                data-cy="todo-title-input"
+                placeholder="Create an Event"
+              />
+              <span
+                class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"
+                data-cy="save-todo-button"
+              ></span>
+            </div>
+          </div>
+          <div class="right-side" data-cy="calendar-body">
+            <div class="text-right calendar-change-year">
+              <div class="calendar-change-year-slider">
+                <span
+                  class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"
+                  data-cy="prev-month"
+                ></span>
+                <span class="calendar-current-year"></span>
+                <span class="calendar-current-month"></span>
+                <span
+                  class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"
+                  data-cy="next-month"
+                ></span>
+              </div>
+            </div>
+
+            <div class="calendar-week-list">
+              <ul class="calendar-week"></ul>
+            </div>
+            <ul class="calendar-days"></ul>
+            <div class="calendar-day-list"></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+    <script src="todo.js"></script>
+    <script src="localstorage.js"></script>
+    <script src="main.js"></script>
+    <script src="today.js"></script>
+    <script src="weather.js"></script>
+    <script src="calendar.js"></script>
+  </body>
+</html>
