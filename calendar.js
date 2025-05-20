@@ -27,7 +27,7 @@ function getFirstDayOfMonth(year, month) {
   if (firstDayOfMonth === -1) {
     firstDayOfMonth = 6;
   }
-  return firstDayOfMonth;
+  
 }
 
 // Function to update calendar based on current month and year
